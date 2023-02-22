@@ -10,17 +10,21 @@ La classe Blog presenta:
 package com.mycompany.app;
 
 public class Blog {
-    private int initialCount = 0;
+    private int articlesCount;
     private Article[] articles;
 
     public Blog() {
-        this.articles = new Article[initialCount+20]; 
+        this.articlesCount = 0;
+        this.articles = new Article[3]; 
     }
     
     public void addArticle(Article article){
-        if(articles.length < initialCount){
-             this.articles[initialCount] = article;
-             initialCount++;
+        
+        if(articlesCount >= articles.length) {
+            //qui
         }
+        
+        this.articles[articlesCount] = article;
+        articlesCount++;
     }
 }
